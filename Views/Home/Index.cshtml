@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    header{
+        background-color:darkred;
+    }
+    body {
+        background-color: aqua;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: larger;
+        font-family: 'Baskerville Old Face';
+        color: darkblue;
+    }
+
+    h2 {
+        font-size: 20px;
+        text-align:center;
+        margin-top:50px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: darkolivegreen;
+    }
+
+    p {
+        font-size: medium;
+        font-family: 'Arial Rounded MT';
+        color: darkgreen;
+    }
+    section{
+        display:flex;
+    }
+    div{
+        width: 100px;
+        margin-right: 50px;
+    }
+
+</style>
+
+
+<body>
+    <header>
+        <h1 class="display-4">Welcome to Prince Purse.</h1>
+
+    </header>
+
+    <h2>Our Products</h2>
+    <section>
+        <div>
+            <img src="~/images/p1.jpeg" alt="purse" />
+            <p>Price : 230</p>
+        </div>
+        <div>
+            <img src="~/images/p2.jpeg" alt="purse" />
+            <p>Price : 120</p>
+        </div>
+        <div>
+            <img src="~/images/p3.jpeg" alt="purse" />
+            <p>Price:250</p>
+        </div>
+        <div>
+            <img src="~/images/p4.jpeg" alt="purse" />
+            <p>Price: 150</p>
+        </div>
+        <div>
+            <img src="~/images/p5.jpeg" alt="purse" />
+            <p>Price : 350</p>
+        </div>
+    </section>
+</body>

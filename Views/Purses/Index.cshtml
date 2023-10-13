@@ -1,0 +1,98 @@
+﻿@model PrincePurse.Models.PurseStyleViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<body>
+    <style>
+        h1{
+            color:darkblue;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color:aqua;
+        }
+        p,th,td{
+            color:darkgreen;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+
+    <h1>Purse Catalogue</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <form asp-controller="Purses" asp-action="Index" method="get">
+        <p>
+            <select asp-for="PurseStyle" asp-items="Model.Styles">
+                <option value="">All</option>
+            </select>
+            Title: <input type="text" name="SearchString" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Purses[0].Brand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Purses[0].Colour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Purses[0].Materials)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Purses[0].Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Purses[0].Style)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Purses[0].Availability)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Purses[0].CustomerRating)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Purses)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Brand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Colour)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Materials)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Style)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Availability)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerRating)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</body>
